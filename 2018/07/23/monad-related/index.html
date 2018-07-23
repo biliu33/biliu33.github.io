@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="keep hungry, keep foolish">
 <meta property="og:description" content="monad概念定义 a monad is just a monoid in the category of endofunctors.(单子说白了不过就是自函子范畴上的一个幺半群而已)  前置知识Binary operation(二元操作)as its name. Magma(wiki) in abstract algebra, a magma(or groupoid: not to be con">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-23T14:01:03.725Z">
+<meta property="og:updated_time" content="2018-07-23T14:18:51.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="monad-related">
 <meta name="twitter:description" content="monad概念定义 a monad is just a monoid in the category of endofunctors.(单子说白了不过就是自函子范畴上的一个幺半群而已)  前置知识Binary operation(二元操作)as its name. Magma(wiki) in abstract algebra, a magma(or groupoid: not to be con">
@@ -163,9 +163,12 @@
 <p>(some authors write id_x) called the identity morphism for x, such that for every morphism f: a -&gt; x and every morphism g: x -&gt; b, we have 1_x ◦ f = f and g ◦ 1_x = g<br>from these axioms, one can prove that if there is exactly one identity morphism for every object. some authors use a slight varation of the definition in which each object is identified with the corresponding identity morphism.</p>
 <h3 id="morphisam-态射-wiki"><a href="#morphisam-态射-wiki" class="headerlink" title="morphisam(态射)(wiki)"></a>morphisam(态射)(wiki)</h3><p>a category C consists of two classes, one of objects and the other of morphisms.<br>there are two objects that are associated to every morphism, the source and the target.<br>for many common categories, objects are sets(often with some additional structure) and morphisms are functions from an object to another object. therefore, the source and the target of a morphism are called domain and codomain respectively.<br>morphisms are equipped with a partial binary operation, call composition. the composition of two morphisms f and g is defined if and only if the target of f is the source if g, and is denoted g ◦ f(or, sometimes, simly g f).<br>the source of g ◦ f is the source of f, and the target of g ◦ f is the target of g. the composition statisfies two axioms:<br>identity: for every object X, there exists a morphism id_x: X -&gt; X called the identity morphism on X, such that for every morphism f: A -&gt; B we have id_B ◦ f = f = f ◦ id_A.<br>associativity: h ∘ (g ∘ f) = (h ∘ g) ∘ f whenever the operations are defined, that is when the target of f is the source of g, and the target of g is the source of h.</p>
 <h3 id="functor-函子-wiki"><a href="#functor-函子-wiki" class="headerlink" title="functor(函子)(wiki)"></a>functor(函子)(wiki)</h3><p>let C and D be categories. a functor F form C to D is a mapping that:</p>
-<blockquote>
-<p>associates to each object X in C an object F(X) in D,<br>associates to each morphism f: X -&gt; T in C a morphism F(f): F(X) -&gt; F(Y) in D such that the following two conditions hold<br>F(id_x) = id(F(x)) for every object X in C,<br>F(g ◦ f) = F(g) ◦ F(f) for all morphisms f: X -&gt; y and g: Y -&gt; Z in C.</p>
-</blockquote>
+<ol>
+<li>associates to each object X in C an object F(X) in D,</li>
+<li>associates to each morphism f: X -&gt; T in C a morphism F(f): F(X) -&gt; F(Y) in D such that the following two conditions hold</li>
+<li>F(id_x) = id(F(x)) for every object X in C,</li>
+<li>F(g ◦ f) = F(g) ◦ F(f) for all morphisms f: X -&gt; y and g: Y -&gt; Z in C.</li>
+</ol>
 <p>That is, functors must preserve identity morphisms and compostition of morphisms.</p>
 <h3 id="endofunctor-wiki"><a href="#endofunctor-wiki" class="headerlink" title="endofunctor(wiki)"></a>endofunctor(wiki)</h3><p>a functor that maps a category to itself.</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>如果所有的前置知识都可以正确理解的话,那么正如概念描述中所述:a monad is just a monoid in the category of endofunctors.</p>
@@ -174,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjjycafr20001x0d8acluwofv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjjycxblf00022od8hjhu8xxg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/monad/">monad</a></li></ul>
