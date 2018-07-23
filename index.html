@@ -87,9 +87,9 @@
         <h1 id="monad"><a href="#monad" class="headerlink" title="monad"></a>monad</h1><h2 id="概念定义"><a href="#概念定义" class="headerlink" title="概念定义"></a>概念定义</h2><blockquote>
 <p>a monad is just a monoid in the category of endofunctors.(单子说白了不过就是自函子范畴上的一个幺半群而已)</p>
 </blockquote>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>Binary operation(二元操作): as its name.</p>
-<p>Magma: (wiki) in abstract algebra, a magma(or groupoid: not to be confused with groupoids in category theory) is<br>a basic kind of algebraic structure. Specifically,<br>a magma consists of a set equipped with a single binary operation.<br>The binary operation must be closed by definition but no other properties are imposed.<br>支持二元操作符, 同时该操作满足闭包性质. </p>
-<p>Associative(结合律):(wiki) formally, a binary operation * on a Set S is called associative if it staisfies the associative law:</p>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="Binary-operation-二元操作"><a href="#Binary-operation-二元操作" class="headerlink" title="Binary operation(二元操作)"></a>Binary operation(二元操作)</h3><p>as its name.</p>
+<h3 id="Magma-wiki"><a href="#Magma-wiki" class="headerlink" title="Magma(wiki)"></a>Magma(wiki)</h3><p> in abstract algebra, a magma(or groupoid: not to be confused with groupoids in category theory) is a basic kind of algebraic structure.<br>Specifically, a magma consists of a set equipped with a single binary operation.<br>The binary operation must be closed by definition but no other properties are imposed.<br>支持二元操作符, 同时该操作满足闭包性质. </p>
+<h2 id="Associative-结合律-wiki"><a href="#Associative-结合律-wiki" class="headerlink" title="Associative(结合律)(wiki)"></a>Associative(结合律)(wiki)</h2><p>formally, a binary operation * on a Set S is called associative if it staisfies the associative law:</p>
 <blockquote>
 <p>(x <em> y) </em> z = x <em> (y </em> z) for all x, y, z in S</p>
 </blockquote>
@@ -98,7 +98,7 @@
 <p>(xy)z = x(yz) = xyz for all x, y, z in S</p>
 </blockquote>
 <p>the associative law can alse be expressed in functional notation thus: f(f(x, y), z) = f(x, f(y, z))</p>
-<p>Semigroup: a semigroup is a set on which the following is defined:</p>
+<h3 id="Semigroup"><a href="#Semigroup" class="headerlink" title="Semigroup"></a>Semigroup</h3><p>a semigroup is a set on which the following is defined:</p>
 <blockquote>
 <p>operation: x ◦ y</p>
 </blockquote>
@@ -106,8 +106,8 @@
 <blockquote>
 <pre><code>x ◦ ( y ◦ z ) = ( x ◦ y ) ◦ z              associativity
 </code></pre></blockquote>
-<p>Identity:(个人理解)这个性质指的是,在一集合中,该集合中存在着一单位元素e, 任一元素与该元素执行二元操作得到的结果均为自身.<br>(关于相等, 二元操作, 顺序就不一一介绍了)</p>
-<p>Monoid: a monoid is a set on which the following are defined:</p>
+<h3 id="Identity-个人理解"><a href="#Identity-个人理解" class="headerlink" title="Identity(个人理解)"></a>Identity(个人理解)</h3><p>这个性质指的是,在一集合中,该集合中存在着一单位元素e, 任一元素与该元素执行二元操作得到的结果均为自身.<br>(关于相等, 二元操作, 顺序就不一一介绍了)</p>
+<h3 id="Monoid-wiki"><a href="#Monoid-wiki" class="headerlink" title="Monoid(wiki)"></a>Monoid(wiki)</h3><p>a monoid is a set on which the following are defined:</p>
 <blockquote>
 <p>operation: x ◦ y<br>constant:  e</p>
 </blockquote>
@@ -116,8 +116,8 @@
 <pre><code>x ◦ ( y ◦ z ) = ( x ◦ y ) ◦ z              associativity
     x ◦ e = e ◦ x = x                      identity
 </code></pre></blockquote>
-<p>Inverse: the operation x^(-1) is the inverse operation: applying the operation to an item and its inverse results in the identity element,<br>as the last axiom shows.</p>
-<p>Group: a group is a set on which the following are defined:</p>
+<h3 id="Inverse"><a href="#Inverse" class="headerlink" title="Inverse"></a>Inverse</h3><p>the operation x^(-1) is the inverse operation: applying the operation to an item and its inverse results in the identity element, as the last axiom shows.</p>
+<h3 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h3><p>a group is a set on which the following are defined:</p>
 <blockquote>
 <p>operations: x ◦ y, x^(-1)<br>constant: e</p>
 </blockquote>
@@ -127,7 +127,7 @@
     x ◦ e = e ◦ x = x                      identity
  x ◦ x^(−1) = x^(−1) ◦ x = e               cancellation
 </code></pre></blockquote>
-<p>Commutative(交换律):(wiki) the term “commutative” is used in serveral related senses.</p>
+<h3 id="Commutative-交换律-wiki"><a href="#Commutative-交换律-wiki" class="headerlink" title="Commutative(交换律)(wiki)"></a>Commutative(交换律)(wiki)</h3><p>the term “commutative” is used in serveral related senses.</p>
 <ol>
 <li>a binary operation * on a set S is called commutative if:</li>
 </ol>
@@ -142,12 +142,13 @@
 <p>x <em> y = y </em> x</p>
 </blockquote>
 <ol start="3">
-<li>A binary function: f: A * A -&gt; B is called commutative if:<blockquote>
-<p>f(x, y) = f(y, x) for all x, y in A<br>(这也意味着交换律与闭包无关)</p>
-</blockquote>
-</li>
+<li>A binary function: f: A * A -&gt; B is called commutative if:</li>
 </ol>
-<p>category(范畴):(wiki) there are many equivalent definitions of a category. One commonly used definition is as follows. a category C consists of:</p>
+<blockquote>
+<p>f(x, y) = f(y, x) for all x, y in A</p>
+</blockquote>
+<p>(这也意味着交换律与闭包无关)</p>
+<h3 id="category-范畴-wiki"><a href="#category-范畴-wiki" class="headerlink" title="category(范畴)(wiki)"></a>category(范畴)(wiki)</h3><p>there are many equivalent definitions of a category. One commonly used definition is as follows. a category C consists of:</p>
 <blockquote>
 <p>a class ib(C) of objects<br>a class hom(C) of morphisms, or arriwsm, or maps, between the objects. each morphism f has a source object a and a target object b where a and b are in ob(C). we write f: a -&gt; b, and we say “f is a morphism from a to b”.</p>
 </blockquote>
@@ -156,26 +157,24 @@
 <p>(associativity) if f: a -&gt; b, g: b -&gt; c and h: c -&gt; d then h ◦ (g ◦ f) = (h ◦ g) ◦ f, and<br>(identity) for every object x, there exists a morphism 1_x: x -&gt; x </p>
 </blockquote>
 <p>(some authors write id_x) called the identity morphism for x, such that for every morphism f: a -&gt; x and every morphism g: x -&gt; b, we have 1_x ◦ f = f and g ◦ 1_x = g<br>from these axioms, one can prove that if there is exactly one identity morphism for every object. some authors use a slight varation of the definition in which each object is identified with the corresponding identity morphism.</p>
-<p>morphisam(态射):(wiki) a category C consists of two classes, one of objects and the other of morphisms.<br>there are two objects that are associated to every morphism, the source and the target.<br>for many common categories, objects are sets(often with some additional structure) and morphisms are functions from an object to another object. therefore, the source and the target of a morphism are called domain and codomain respectively.<br>morphisms are equipped with a partial binary operation, call composition. the composition of two morphisms f and g is defined if and only if the target of f is the source if g, and is denoted g ◦ f(or, sometimes, simly g f).<br>the source of g ◦ f is the source of f, and the target of g ◦ f is the target of g. the composition statisfies two axioms:</p>
-<p>identity: for every object X, there exists a morphism id_x: X -&gt; X called the identity morphism on X, such that for every morphism f: A -&gt; B we have id_B ◦ f = f = f ◦ id_A.<br>associativity: h ∘ (g ∘ f) = (h ∘ g) ∘ f whenever the operations are defined, that is when the target of f is the source of g, and the target of g is the source of h.</p>
-<p>functor(函子):(wiki) let C and D be categories. a functor F form C to D is a mapping that:</p>
+<h3 id="morphisam-态射-wiki"><a href="#morphisam-态射-wiki" class="headerlink" title="morphisam(态射)(wiki)"></a>morphisam(态射)(wiki)</h3><p>a category C consists of two classes, one of objects and the other of morphisms.<br>there are two objects that are associated to every morphism, the source and the target.<br>for many common categories, objects are sets(often with some additional structure) and morphisms are functions from an object to another object. therefore, the source and the target of a morphism are called domain and codomain respectively.<br>morphisms are equipped with a partial binary operation, call composition. the composition of two morphisms f and g is defined if and only if the target of f is the source if g, and is denoted g ◦ f(or, sometimes, simly g f).<br>the source of g ◦ f is the source of f, and the target of g ◦ f is the target of g. the composition statisfies two axioms:<br>identity: for every object X, there exists a morphism id_x: X -&gt; X called the identity morphism on X, such that for every morphism f: A -&gt; B we have id_B ◦ f = f = f ◦ id_A.<br>associativity: h ∘ (g ∘ f) = (h ∘ g) ∘ f whenever the operations are defined, that is when the target of f is the source of g, and the target of g is the source of h.</p>
+<h3 id="functor-函子-wiki"><a href="#functor-函子-wiki" class="headerlink" title="functor(函子)(wiki)"></a>functor(函子)(wiki)</h3><p>let C and D be categories. a functor F form C to D is a mapping that:</p>
 <blockquote>
-<p>associates to each object X in C an object F(X) in D,<br>associates to each morphism f: X -&gt; T in C a morphism F(f): F(X) -&gt; F(Y) in D such that the following two conditions hold</p>
-<blockquote>
-<p>F(id_x) = id(F(x)) for every object X in C,<br>F(g ◦ f) = F(g) ◦ F(f) for all morphisms f: X -&gt; y and g: Y -&gt; Z in C.</p>
-</blockquote>
+<p>associates to each object X in C an object F(X) in D,<br>associates to each morphism f: X -&gt; T in C a morphism F(f): F(X) -&gt; F(Y) in D such that the following two conditions hold<br>F(id_x) = id(F(x)) for every object X in C,<br>F(g ◦ f) = F(g) ◦ F(f) for all morphisms f: X -&gt; y and g: Y -&gt; Z in C.</p>
 </blockquote>
 <p>That is, functors must preserve identity morphisms and compostition of morphisms.</p>
-<p>endofunctor:(wiki) a functor that maps a category to itself.</p>
+<h3 id="endofunctor-wiki"><a href="#endofunctor-wiki" class="headerlink" title="endofunctor(wiki)"></a>endofunctor(wiki)</h3><p>a functor that maps a category to itself.</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>如果所有的前置知识都可以正确理解的话,那么正如概念描述中所述:a monad is just a monoid in the category of endofunctors.</p>
 <h1 id="references"><a href="#references" class="headerlink" title="references:"></a>references:</h1><p>from mathematics to generic programming<br>wiki</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjjy65hmn0002s8d8aoqdu2vw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjjy6fgye00006wd8rbx5grjk" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/monad/">monad</a></li></ul>
+
     </footer>
   </div>
   
@@ -210,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjjy65hmm0001s8d8kedlrpkb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjjy6fgyn00036wd8tjyootr5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -257,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/18/hello-world/" data-id="cjjy65hm20000s8d8evmikvug" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/18/hello-world/" data-id="cjjy6fgyj00016wd86v9uj2p2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +279,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li></ul>
     </div>
   </div>
 
@@ -290,7 +289,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
+      <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
     </div>
   </div>
 
