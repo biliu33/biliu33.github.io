@@ -83,9 +83,9 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-mathematical-equations-and-vistors-related" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mathematical-equations-and-visitors-related" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/24/mathematical-equations-and-vistors-related/" class="article-date">
+    <a href="/2018/07/24/mathematical-equations-and-visitors-related/" class="article-date">
   <time datetime="2018-07-24T13:40:32.000Z" itemprop="datePublished">2018-07-24</time>
 </a>
     
@@ -97,7 +97,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/24/mathematical-equations-and-vistors-related/">mathematical-equations-and-vistors-related</a>
+      <a class="article-title" href="/2018/07/24/mathematical-equations-and-visitors-related/">mathematical-equations-and-visitors-related</a>
     </h1>
   
 
@@ -110,11 +110,11 @@ ga('send', 'pageview');
 <p>npm install hexo-renderer-mathjax –save</p>
 </blockquote>
 <p>由于一些奇怪的原因，这个module无法直接使用，需要做一些修改</p>
-<h3 id="node-modules-hexo-renderer-mathjax-mathjax-html"><a href="#node-modules-hexo-renderer-mathjax-mathjax-html" class="headerlink" title="./node_modules/hexo-renderer-mathjax/mathjax.html"></a>./node_modules/hexo-renderer-mathjax/mathjax.html</h3><p>将<script>修改为：</p>
+<h3 id="node-modules-hexo-renderer-mathjax-mathjax-html"><a href="#node-modules-hexo-renderer-mathjax-mathjax-html" class="headerlink" title="./node_modules/hexo-renderer-mathjax/mathjax.html"></a>./node_modules/hexo-renderer-mathjax/mathjax.html</h3><p>将script中对应的src修改为：</p>
 <blockquote>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</p><h3 id="nodes-modules-marked-lib-marked-js"><a href="#nodes-modules-marked-lib-marked-js" class="headerlink" title="./nodes_modules/marked/lib/marked.js"></a>./nodes_modules/marked/lib/marked.js</h3><p>1.</p>
+<p>“<a href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;" target="_blank" rel="noopener">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;</a></p>
+</blockquote>
+<h3 id="nodes-modules-marked-lib-marked-js"><a href="#nodes-modules-marked-lib-marked-js" class="headerlink" title="./nodes_modules/marked/lib/marked.js"></a>./nodes_modules/marked/lib/marked.js</h3><p>1.</p>
 <blockquote>
 <p>before: “escape: /^\(<a href="">\`*{}[\</a>#$+-.!_&gt;])/,”<br>after: “escape: /^\(<a href="">`*[\</a># +-.!_&gt;])/,”</p>
 </blockquote>
@@ -128,7 +128,7 @@ ga('send', 'pageview');
 </blockquote>
 <h1 id="add-google-analytics"><a href="#add-google-analytics" class="headerlink" title="add google analytics"></a>add google analytics</h1><p>就我使用的hexo版本而言，许多国内的博客教程是错误的。因此略微记录一下。</p>
 <h2 id="修改的-config-yaml"><a href="#修改的-config-yaml" class="headerlink" title="修改的_config.yaml"></a>修改的_config.yaml</h2><p>添加这个插件确实需要修改配置文件，但是这个配置文件是对应额theme的配置文件，而不是我们一般的博客的配置。</p>
-<h2 id="修改-config-yaml方式"><a href="#修改-config-yaml方式" class="headerlink" title="修改_config.yaml方式"></a>修改_config.yaml方式</h2><p>这里许多国内的博客介绍的是将google analytics 当做父级，然后添加id， site， enable 等等。<br>但是似乎并没有生效，去google上检索， 将U-id直接放置于google analytics后面即可。</p>
+<h2 id="修改-config-yaml方式"><a href="#修改-config-yaml方式" class="headerlink" title="修改_config.yaml方式"></a>修改_config.yaml方式</h2><p>这里许多国内的博客介绍的是将google analytics 当做父级，然后添加id， site， enable 等等。<br>但是似乎并没有生效，去google上检索， 将u-id直接放置于google analytics后面即可。</p>
 <blockquote>
 <p>google_analytics: u-id </p>
 </blockquote>
@@ -136,7 +136,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/mathematical-equations-and-vistors-related/" data-id="cjjzrnxgw000168d8v8vaoovo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/24/mathematical-equations-and-visitors-related/" data-id="cjk0cuxt00000okd8z5fdksnc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
@@ -256,7 +256,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjjzrnxgy000268d8dnlaftn4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjk0cuxtb0003okd8nvugdtii" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/monad/">monad</a></li></ul>
@@ -295,7 +295,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjjzrnxhc000968d89llgty0k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjk0cuxtp0009okd866bod5jg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -342,7 +342,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/18/hello-world/" data-id="cjjzrnxgq000068d81z9k55o8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/18/hello-world/" data-id="cjk0cuxt60001okd8x70idddq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -397,7 +397,7 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2018/07/24/mathematical-equations-and-vistors-related/">mathematical-equations-and-vistors-related</a>
+            <a href="/2018/07/24/mathematical-equations-and-visitors-related/">mathematical-equations-and-visitors-related</a>
           </li>
         
           <li>
