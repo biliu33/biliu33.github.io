@@ -83,6 +83,74 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-最小未出现数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/29/最小未出现数/" class="article-date">
+  <time datetime="2018-07-29T03:06:22.000Z" itemprop="datePublished">2018-07-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/29/最小未出现数/">最小未出现数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阅读了一些函数式编程的书籍与面向对象的编程书籍之后，感觉依然只是对函数式有了一个浅显的认识。而买了《函数式算法设计珠玑》已经很久，既然打算写博客，因此打算每一章节写一个自己的认知之类的。（这本书总计30章，彼此之间没有联系，计算一周写一章相关的系列）</p>
+<h2 id="问题概述"><a href="#问题概述" class="headerlink" title="问题概述"></a>问题概述</h2><p>集合X是一组无序、互异数字组成的列表，设计一个算法以线性时间的结算求解，不在该列表中的最小自然数。</p>
+<h3 id="我自己的一些认知"><a href="#我自己的一些认知" class="headerlink" title="我自己的一些认知"></a>我自己的一些认知</h3><p>函数式算法给我最大的认知是，我们需要去发现问题的基本性质与性质组合后的性质，然后通过对问题的性质描述去解决问题。即我们实际上描述的是：这个问题是什么（what）。而面向对象通常描述的是：这个问题怎么做（how）。第一次在书本上看到是困惑与不解，现在想想深以为然。</p>
+<h2 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h2><p>分治算法十分常见且有效，<strong>他的基本思想是用 <em>minfree xs</em> 和 <em>minfree ys</em>  表示 <em>minfree （xs ++ ys）</em> </strong>，<br>其中 <strong><em>us\\\\vs</em></strong> 表示的是从 <strong><em>us</em></strong> 删除 <strong><em>vs</em></strong>的元素。</p>
+<ol>
+<li>(as ++ bs) \\\ cs = (as \\\ cs) ++ (bs \\\ cs)</li>
+<li>as \\\ (bs ++ cs) == (as \\\ bs) \\\ cs</li>
+<li>(as \\\ bs) \\\ cs == (as \\\ cs) \\\ bs</li>
+</ol>
+<p>这里的属性与集合的运算类似（并集、差集的操作），现在假设 <strong><em>as</em></strong> 和 <strong><em>us</em></strong> 是不相交的， <strong><em>bs</em></strong> 和 <strong><em>vs</em></strong> 是不相交的，那么根据以上3条性质推理有：</p>
+<ol start="4">
+<li>(as ++ bs) \\\ (us ++ vs)</li>
+</ol>
+<p>简单的性质带入即可推导出：</p>
+<blockquote>
+<p>(as ++ bs) \\\  (us ++ vs) = (as \\\ (us ++ vs)) ++ (bs \\\ (us ++ vs)) = ((as \\\ us) \\\ vs) ++ ((bs \\\ us) \\\ vs) = (as \\\ vs) ++ ((bs \\\ vs) \\\ us) = (as \\\ vs) ++ (bs \\\ us)</p>
+</blockquote>
+<p>因此，选择任意自然数<strong><em>b</em></strong>，  令 <strong><em>as=[0,.b-1]</em></strong> 以及<strong><em>bs=[b..]</em></strong>，进一步令<strong><em>vs=filter(&lt;b)xs, vs=filter(&gt;=b)xs</em></strong>，所以<strong><em>as</em></strong> 和 <strong><em>vs</em></strong> 不相交， <strong><em>bs</em></strong>和<strong><em>us</em></strong>不相交，所以：</p>
+<blockquote>
+<p>[0…] \\\ xs = ([0..b-1] \\\ vs) ++ ([b..] \\vs) where (us, vs) = partion (&lt;b) xs</p>
+</blockquote>
+<p>所以可以推导得到：</p>
+<blockquote>
+<p>minfree xs = if null([0..b-1]\\\\us) then head([b..] \\\ vs) else head([0..]\\\\us) where (us, vs) = partion(&lt;b) xs</p>
+</blockquote>
+<p>下面的问题是如何高效的计算<strong><em>null([0..b-1)\\us</em></strong>，如果直接计算的话，那么消耗的时间将与<strong><em>us</em></strong>的长度有关。因为假设输入的数组内部元素互异，且<strong><em>us</em></strong>中的元素均小于<strong><em>b</em></strong>，所以可以的到<br><strong><em>null([0..b-1]\\\\us) === length us == b</em></strong></p>
+<p>所以<br>minfree xs = minfree 0 xs<br>minfree a xs | null xs             = 0<br>             | length us == b - a  = minfree b vs<br>             | otherwise           = minfree a us<br>               where (us, vs) = partion(&lt;b) xs</p>
+<p>所以现在的问题在于如何确定<strong><em>b</em></strong>的值。<strong><em>b</em></strong>满足要求<strong><em> b&gt;a </em></strong>，同时需要us和vs的长度均尽可能的小，所以取b:<br>b = a + 1 + n div 2</p>
+<p>最终表达式：<br>minfree xs = minfree 0 (length xs, xs)<br>minfree a (n, xs) | n == 0           = a<br>                  | m == b - a       = minfree b (n-m, vs)<br>                  | otherwise        = minfree a (m, us)<br>                    where (us, vs)   = partion(&lt;b) xs<br>                            b        = a + 1 + n div 2<br>                            m        = length vs</p>
+<p>$$<br>\begin{align*}<br>(as ++ bs) \setminus\setminus  (us ++ vs) = (as \setminus\setminus (us ++ vs)) ++ (bs \setminus\setminus (us ++ vs)) \\<br>= ((as \setminus\setminus us) \setminus\setminus vs) ++ ((bs \setminus\setminus us) \setminus\setminus vs) \\<br>= (as \setminus\setminus vs) ++ ((bs \setminus\setminus vs) \setminus\setminus us) = (as \setminus\setminus vs) ++ (bs \setminus\setminus us)<br>\end{align}<br>$$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/29/最小未出现数/" data-id="cjk6lpj8b0004p0d8ta3w5t1c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function-programme/">function programme</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mathematical-equations-and-visitors-related" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/24/mathematical-equations-and-visitors-related/" class="article-date">
@@ -136,7 +204,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/mathematical-equations-and-visitors-related/" data-id="cjk0cuxt00000okd8z5fdksnc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/24/mathematical-equations-and-visitors-related/" data-id="cjk6lpj7y0000p0d83o6u1mm9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
@@ -256,7 +324,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjk0cuxtb0003okd8nvugdtii" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjk6lpj890003p0d87dhiycb5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/monad/">monad</a></li></ul>
@@ -295,56 +363,11 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjk0cuxtp0009okd866bod5jg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjk6lpj850001p0d8uc4yhx4z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/hello-world/" class="article-date">
-  <time datetime="2018-07-18T14:03:17.762Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/18/hello-world/" data-id="cjk0cuxt60001okd8x70idddq" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -365,7 +388,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function-programme/">function programme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/readings/">readings</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
     </div>
   </div>
 
@@ -375,7 +398,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
+      <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/function-programme/" style="font-size: 10px;">function programme</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/readings/" style="font-size: 10px;">readings</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
     </div>
   </div>
 
@@ -397,6 +420,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2018/07/29/最小未出现数/">最小未出现数</a>
+          </li>
+        
+          <li>
             <a href="/2018/07/24/mathematical-equations-and-visitors-related/">mathematical-equations-and-visitors-related</a>
           </li>
         
@@ -406,10 +433,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/07/19/raft-algorithm/">raft-algorithm</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -450,22 +473,6 @@ ga('send', 'pageview');
 
 
 
-  </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
