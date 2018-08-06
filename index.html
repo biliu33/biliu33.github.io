@@ -83,6 +83,55 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-SQL-related" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/06/SQL-related/" class="article-date">
+  <time datetime="2018-08-06T11:36:32.000Z" itemprop="datePublished">2018-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/06/SQL-related/">SQL-related</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。</p>
+<h1 id="SQL组成"><a href="#SQL组成" class="headerlink" title="SQL组成"></a>SQL组成</h1><p>SQL标准包括两个主要部分：</p>
+<ol>
+<li>数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。</li>
+<li>数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。</li>
+</ol>
+<h2 id="SQL-DML-语句"><a href="#SQL-DML-语句" class="headerlink" title="SQL DML 语句"></a>SQL DML 语句</h2><p>有以下几种：</p>
+<p>$$<br>\begin{aligned}<br>&amp; SELECT： 查询数据库中的数据\\<br>&amp; INSERT： 将数据插入到表中\\<br>&amp; UPDATE： 更新表中的数据\\<br>&amp; DELETE： 删除表中的数据\\<br>\end{aligned}<br>$$</p>
+<p>其中SELECT较为复杂，需要额外增加一些操作说明，如排序、分组、聚集、涉及多个表的复杂查询。</p>
+<h2 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h2><p>$$<br>\begin{aligned}<br>&amp; SELECT \;\;\;\; &amp;[DISTINCT\; |\; ALL]{\ast\; |\; [columnExpression [AS newName]] [,…]}\\<br>&amp; FROM &amp; TableName[alias][,…]\\<br>&amp; [WHERE &amp; condition] \\<br>&amp; [GROUP\; BY &amp; columnList][HAVING\; condition]\\<br>&amp; [ORDERED\; BY &amp; columnList] \\<br>\end{aligned}<br>$$</p>
+<p>其中：<br>FROM：给出将用到的列表<br>WHERE：过滤满足条件的行<br>GROUP BY： 将具有相同属性值的行分成组<br>HAVING： 过滤满足条件的组<br>SELECT： 指定查询结果中出现的列<br>ORDER BY:指定查询结果的顺序<br>形式不应当比内容重要，不在格式上花过多的时间了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/06/SQL-related/" data-id="cjkic9sie0000owd83kqgcton" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-a-tip-for-latex-in-hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/31/a-tip-for-latex-in-hexo/" class="article-date">
@@ -113,7 +162,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/" data-id="cjk9spjd0000300d871345dsb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/" data-id="cjkic9sik0001owd8tl4qg8qg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li></ul>
@@ -155,14 +204,25 @@ ga('send', 'pageview');
 <h2 id="问题概述"><a href="#问题概述" class="headerlink" title="问题概述"></a>问题概述</h2><p>将加号与乘号插入1至9的列表中，以使表达式的结果为100。举两个列子:</p>
 <p>$$<br>\begin{aligned}<br>100\; = 12 + 34 + 5 \times 6 + 7 + 8 + 9 \\<br>100\; = 1 + 2 \times 3 + 4 + 5 + 67 + 8 + 9<br>\end{aligned}<br>$$</p>
 <p>需要注意的是不能使用括号，同时乘法具有更高的优先级。</p>
-<h2 id="初见思路"><a href="#初见思路" class="headerlink" title="初见思路"></a>初见思路</h2><p>pass</p>
+<h2 id="初见思路"><a href="#初见思路" class="headerlink" title="初见思路"></a>初见思路</h2><p>我的逻辑是，实际上是在1-9的list当中添加8个运算符，现在定义运算符号</p>
+<blockquote>
+<p>$ \oplus: a \oplus b = a \times 10 + b $</p>
+</blockquote>
+<p>现在的问题是如何以正确的顺序插入这3个符号，举个例子：</p>
+<p>$$<br>\begin{aligned}<br>100\; = 12 + 34 + 5 \times 6 + 7 + 8 + 9 \equiv \\<br>100\; = 1 \oplus 2 + 3 \oplus 4 + 5 \times 6 + 7 + 8 + 9<br>\end{aligned}<br>$$</p>
+<p>所以以穷举法，穷举的可能有$3^8=6561$种可能的解法，但是其中需要对每一种进行计算。<br>实际的复杂度可能会更高，所以考虑可能优化的方向。</p>
+<p>因为操作符两边的元素为1-9，所以</p>
+<blockquote>
+<p>$a \oplus b = 10 \times a + b &gt; 10 \times b &gt; a \times b$</p>
+</blockquote>
+<p>所以$\oplus$ 具有比 $\times $ 更高的计算值，直觉上$\times $ 比 $+$ 具有更高的优先级。<br>同时，易证这3中运算都属于增加的操作$a\; operator\; b &gt; max(a,\; b)$。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>pass</p>
 <h2 id="python代码实现"><a href="#python代码实现" class="headerlink" title="python代码实现"></a>python代码实现</h2><p>pass</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/make-the-list-to-100/" data-id="cjk9spjck000100d8iv9jqehp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/31/make-the-list-to-100/" data-id="cjkic9sip0003owd8mulif0d8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li></ul>
@@ -226,7 +286,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" data-id="cjk9spje1000h00d8oc0eok8a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" data-id="cjkic9sjl000nowd809x0kk06" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li></ul>
@@ -291,7 +351,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjk9spjca000000d8t9xx23vi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjkic9sj10009owd8ol6o8tp2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
@@ -411,7 +471,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjk9spjd3000500d8z19j4ood" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjkic9siu0006owd8bdqkps3l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/monad/">monad</a></li></ul>
@@ -450,7 +510,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjk9spjdz000g00d8dtdjnzg5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjkic9sir0004owd8o742358h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -482,7 +542,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/readings/">readings</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/readings/">readings</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
     </div>
   </div>
 
@@ -492,7 +552,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/readings/" style="font-size: 20px;">readings</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
+      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/readings/" style="font-size: 20px;">readings</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
     </div>
   </div>
 
@@ -501,7 +561,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
     </div>
   </div>
 
@@ -512,6 +572,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/06/SQL-related/">SQL-related</a>
+          </li>
         
           <li>
             <a href="/2018/07/31/a-tip-for-latex-in-hexo/">a-tip-for-latex-in-hexo</a>
@@ -527,10 +591,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/07/24/install-mathjax-and-set-google-analysis-config/">install-mathjax-and-set-google-analysis-config</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/23/monad-related/">monad-related</a>
           </li>
         
       </ul>

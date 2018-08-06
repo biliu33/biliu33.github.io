@@ -18,20 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>a-tip-for-latex-in-hexo | keep hungry, keep foolish</title>
+  <title>SQL-related | keep hungry, keep foolish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天在用latex书写公式，发现在网页上总是无法正确的渲染。调试了半天，因为对前端知识的缺乏，很久也没有发现错误的原因。 对比之前的可以正确渲染，与今天的无法正确渲染的markdown源码进行对比，猜测可能是编辑的公式内容问题。 将公式中的* 全部修改为 \times，可以正确渲染。 问题不大，但是难以定位，而且难以去网上寻找到相关的资料，因此予以记录一下。">
-<meta name="keywords" content="tips">
+  <meta name="description" content="数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。 SQL组成SQL标准包括两个主要部分：  数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。 数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。  SQL DML 语句有以下几种： $$\begin{al">
+<meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a-tip-for-latex-in-hexo">
-<meta property="og:url" content="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/index.html">
+<meta property="og:title" content="SQL-related">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/SQL-related/index.html">
 <meta property="og:site_name" content="keep hungry, keep foolish">
-<meta property="og:description" content="今天在用latex书写公式，发现在网页上总是无法正确的渲染。调试了半天，因为对前端知识的缺乏，很久也没有发现错误的原因。 对比之前的可以正确渲染，与今天的无法正确渲染的markdown源码进行对比，猜测可能是编辑的公式内容问题。 将公式中的* 全部修改为 \times，可以正确渲染。 问题不大，但是难以定位，而且难以去网上寻找到相关的资料，因此予以记录一下。">
+<meta property="og:description" content="数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。 SQL组成SQL标准包括两个主要部分：  数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。 数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。  SQL DML 语句有以下几种： $$\begin{al">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-31T13:50:06.374Z">
+<meta property="og:updated_time" content="2018-08-06T13:56:00.554Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="a-tip-for-latex-in-hexo">
-<meta name="twitter:description" content="今天在用latex书写公式，发现在网页上总是无法正确的渲染。调试了半天，因为对前端知识的缺乏，很久也没有发现错误的原因。 对比之前的可以正确渲染，与今天的无法正确渲染的markdown源码进行对比，猜测可能是编辑的公式内容问题。 将公式中的* 全部修改为 \times，可以正确渲染。 问题不大，但是难以定位，而且难以去网上寻找到相关的资料，因此予以记录一下。">
+<meta name="twitter:title" content="SQL-related">
+<meta name="twitter:description" content="数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。 SQL组成SQL标准包括两个主要部分：  数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。 数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。  SQL DML 语句有以下几种： $$\begin{al">
   
     <link rel="alternate" href="/atom.xml" title="keep hungry, keep foolish" type="application/atom+xml">
   
@@ -82,10 +82,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-a-tip-for-latex-in-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SQL-related" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/31/a-tip-for-latex-in-hexo/" class="article-date">
-  <time datetime="2018-07-31T13:46:19.000Z" itemprop="datePublished">2018-07-31</time>
+    <a href="/2018/08/06/SQL-related/" class="article-date">
+  <time datetime="2018-08-06T11:36:32.000Z" itemprop="datePublished">2018-08-06</time>
 </a>
     
   </div>
@@ -96,7 +96,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      a-tip-for-latex-in-hexo
+      SQL-related
     </h1>
   
 
@@ -104,18 +104,25 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在用latex书写公式，发现在网页上总是无法正确的渲染。调试了半天，<br>因为对前端知识的缺乏，很久也没有发现错误的原因。</p>
-<p>对比之前的可以正确渲染，与今天的无法正确渲染的markdown源码进行对比，<br>猜测可能是编辑的公式内容问题。</p>
-<p>将公式中的* 全部修改为 \times，<br>可以正确渲染。</p>
-<p>问题不大，但是难以定位，而且难以去网上寻找到相关的资料，因此予以记录一下。</p>
+        <p>数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。</p>
+<h1 id="SQL组成"><a href="#SQL组成" class="headerlink" title="SQL组成"></a>SQL组成</h1><p>SQL标准包括两个主要部分：</p>
+<ol>
+<li>数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。</li>
+<li>数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。</li>
+</ol>
+<h2 id="SQL-DML-语句"><a href="#SQL-DML-语句" class="headerlink" title="SQL DML 语句"></a>SQL DML 语句</h2><p>有以下几种：</p>
+<p>$$<br>\begin{aligned}<br>&amp; SELECT： 查询数据库中的数据\\<br>&amp; INSERT： 将数据插入到表中\\<br>&amp; UPDATE： 更新表中的数据\\<br>&amp; DELETE： 删除表中的数据\\<br>\end{aligned}<br>$$</p>
+<p>其中SELECT较为复杂，需要额外增加一些操作说明，如排序、分组、聚集、涉及多个表的复杂查询。</p>
+<h2 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h2><p>$$<br>\begin{aligned}<br>&amp; SELECT \;\;\;\; &amp;[DISTINCT\; |\; ALL]{\ast\; |\; [columnExpression [AS newName]] [,…]}\\<br>&amp; FROM &amp; TableName[alias][,…]\\<br>&amp; [WHERE &amp; condition] \\<br>&amp; [GROUP\; BY &amp; columnList][HAVING\; condition]\\<br>&amp; [ORDERED\; BY &amp; columnList] \\<br>\end{aligned}<br>$$</p>
+<p>其中：<br>FROM：给出将用到的列表<br>WHERE：过滤满足条件的行<br>GROUP BY： 将具有相同属性值的行分成组<br>HAVING： 过滤满足条件的组<br>SELECT： 指定查询结果中出现的列<br>ORDER BY:指定查询结果的顺序<br>形式不应当比内容重要，不在格式上花过多的时间了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/" data-id="cjkic9sik0001owd8tl4qg8qg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/06/SQL-related/" data-id="cjkic9sie0000owd83kqgcton" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
 
     </footer>
   </div>
@@ -123,19 +130,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2018/08/06/SQL-related/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          SQL-related
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/31/make-the-list-to-100/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/31/a-tip-for-latex-in-hexo/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">make-the-list-to-100</div>
+      <div class="article-nav-title">a-tip-for-latex-in-hexo</div>
     </a>
   
 </nav>
