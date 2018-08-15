@@ -83,6 +83,58 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-about-binary-tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/15/about-binary-tree/" class="article-date">
+  <time datetime="2018-08-15T11:58:08.000Z" itemprop="datePublished">2018-08-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/15/about-binary-tree/">about-binary-tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>新买了本书《STL源码解析》，没怎么看懂源码反而把二叉树的性质原理之类加深了一些理解。</p>
+<h2 id="二叉树定义及性质"><a href="#二叉树定义及性质" class="headerlink" title="二叉树定义及性质"></a>二叉树定义及性质</h2><blockquote>
+<p>二叉搜索树，可以提供对数时间的元素插入和访问。节点放置规则是：任何节点的键值一定大于其左子树中的每一个节点的键值，并且小于其右侧子树中的每一个节点的键值。（ps：出现重复的值怎么处理？）</p>
+</blockquote>
+<p>根据节点的放置规则可知：从根节点沿着左侧走即可查找到最小值，右侧寻找可以查找到最大值。<br>易证明，可以以对数时间访问元素。（插入在后面需要证明几个操作）</p>
+<h2 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h2><p>现在需要向一个二叉树中插入一个值，那么沿着根节点出发，将需要插入的值与当前的键值进行比较。如果需要插入的值较大，那么向右走；反之向左走。直至走至叶节点，即没有子树时，顺势插入左侧或者右侧。</p>
+<p>根据上述描述，可知最终得到的新的二叉树符合二叉树的性质。</p>
+<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><ol>
+<li>首先考虑最简单的删除叶节点的情形，即直接删除即可。<br>易知新的二叉树符合二叉树性质。</li>
+<li>删除的节点是局部二叉树的根节点。此时若删除该节点，需要将剩余的所有点重新连接至原本的二叉树上。保持剩下的节点相对位置不变，那么只需要在原有的根节点处插入一个新值即可。该新值满足大于左侧子树的任意值，小于右侧子树的任意值。考虑到维持节点的内容，与子树的性质。取右侧子树的最小值，执行删除操作（必然是叶节点，直接删除），取出内容，放置于根节点。<br>可知新的二叉树依然符合二叉树性质。<br>3.若删除的节点只有一个子节点，那么直接将该节点删除，将该叶节点连接至上一层父节点。（和2中的情形相似，语言描述不是很方便）</li>
+</ol>
+<p>综上二叉树一般情形，性质，操作，作用均已经描述。</p>
+<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><p>在最极端情况下，二叉树极不平衡，其搜索效率为 $O(n)$ ，因此引入了平衡二叉树的概念。需要考虑的为什么通过这些平衡二叉树的额外性质可以对树进行平衡操作，同时依旧符合其自身的性质。（可以用范畴的语言更精确描述）</p>
+<p>todo: 描述他们的行为与性质</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/15/about-binary-tree/" data-id="cjkv8f3vy0001pgd8f44plbcv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data-structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-arrangements-about-some-books" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/13/arrangements-about-some-books/" class="article-date">
@@ -134,7 +186,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/13/arrangements-about-some-books/" data-id="cjksfg3350004jgd8iv4xa93l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/13/arrangements-about-some-books/" data-id="cjkv8f3w50004pgd88z4phjmq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arrangements/">arrangements</a></li></ul>
@@ -183,7 +235,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/06/SQL-related/" data-id="cjksfg3310001jgd85qix8idy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/06/SQL-related/" data-id="cjkv8f3vs0000pgd88ihpx407" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -225,7 +277,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/" data-id="cjksfg32w0000jgd8r97jt56b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/" data-id="cjkv8f3w30003pgd81vkoa9vf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li></ul>
@@ -285,10 +337,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/make-the-list-to-100/" data-id="cjksfg3390008jgd8kx7nhewk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/31/make-the-list-to-100/" data-id="cjkv8f3w90008pgd8usq53t3f" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
 
     </footer>
   </div>
@@ -349,7 +401,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" data-id="cjksfg33p000rjgd8y765oa01" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" data-id="cjkv8f3we000dpgd8z4utrbw6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li></ul>
@@ -414,7 +466,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjksfg3340003jgd8afhzwhei" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjkv8f3w70005pgd85th474av" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
@@ -534,7 +586,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjksfg3360005jgd801wx76vo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjkv8f3wb0009pgd8ti5dmfgz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/monad/">monad</a></li></ul>
@@ -573,7 +625,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjksfg33d0009jgd80jcn5axi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/19/raft-algorithm/" data-id="cjkv8f3wd000cpgd8pvyyugee" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -605,7 +657,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arrangements/">arrangements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/readings/">readings</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arrangements/">arrangements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data-structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/readings/">readings</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
     </div>
   </div>
 
@@ -615,7 +667,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/arrangements/" style="font-size: 10px;">arrangements</a> <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/readings/" style="font-size: 20px;">readings</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
+      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/arrangements/" style="font-size: 10px;">arrangements</a> <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/data-structure/" style="font-size: 10px;">data-structure</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/readings/" style="font-size: 20px;">readings</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/todo/" style="font-size: 20px;">todo</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
     </div>
   </div>
 
@@ -637,6 +689,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2018/08/15/about-binary-tree/">about-binary-tree</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/13/arrangements-about-some-books/">arrangements-about-some-books</a>
           </li>
         
@@ -650,10 +706,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/07/31/make-the-list-to-100/">make-the-list-to-100</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/">the-smallest-natural-number-which-not-exists-in-list</a>
           </li>
         
       </ul>

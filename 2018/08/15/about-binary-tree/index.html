@@ -18,20 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>SQL-related | keep hungry, keep foolish</title>
+  <title>about-binary-tree | keep hungry, keep foolish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。 SQL组成SQL标准包括两个主要部分：  数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。 数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。  SQL DML 语句有以下几种： $$\begin{al">
-<meta name="keywords" content="SQL">
+  <meta name="description" content="新买了本书《STL源码解析》，没怎么看懂源码反而把二叉树的性质原理之类加深了一些理解。 二叉树定义及性质 二叉搜索树，可以提供对数时间的元素插入和访问。节点放置规则是：任何节点的键值一定大于其左子树中的每一个节点的键值，并且小于其右侧子树中的每一个节点的键值。（ps：出现重复的值怎么处理？）  根据节点的放置规则可知：从根节点沿着左侧走即可查找到最小值，右侧寻找可以查找到最大值。易证明，可以以对数">
+<meta name="keywords" content="data-structure,todo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL-related">
-<meta property="og:url" content="http://yoursite.com/2018/08/06/SQL-related/index.html">
+<meta property="og:title" content="about-binary-tree">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/about-binary-tree/index.html">
 <meta property="og:site_name" content="keep hungry, keep foolish">
-<meta property="og:description" content="数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。 SQL组成SQL标准包括两个主要部分：  数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。 数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。  SQL DML 语句有以下几种： $$\begin{al">
+<meta property="og:description" content="新买了本书《STL源码解析》，没怎么看懂源码反而把二叉树的性质原理之类加深了一些理解。 二叉树定义及性质 二叉搜索树，可以提供对数时间的元素插入和访问。节点放置规则是：任何节点的键值一定大于其左子树中的每一个节点的键值，并且小于其右侧子树中的每一个节点的键值。（ps：出现重复的值怎么处理？）  根据节点的放置规则可知：从根节点沿着左侧走即可查找到最小值，右侧寻找可以查找到最大值。易证明，可以以对数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-06T13:56:00.554Z">
+<meta property="og:updated_time" content="2018-08-15T14:28:42.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL-related">
-<meta name="twitter:description" content="数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。 SQL组成SQL标准包括两个主要部分：  数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。 数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。  SQL DML 语句有以下几种： $$\begin{al">
+<meta name="twitter:title" content="about-binary-tree">
+<meta name="twitter:description" content="新买了本书《STL源码解析》，没怎么看懂源码反而把二叉树的性质原理之类加深了一些理解。 二叉树定义及性质 二叉搜索树，可以提供对数时间的元素插入和访问。节点放置规则是：任何节点的键值一定大于其左子树中的每一个节点的键值，并且小于其右侧子树中的每一个节点的键值。（ps：出现重复的值怎么处理？）  根据节点的放置规则可知：从根节点沿着左侧走即可查找到最小值，右侧寻找可以查找到最大值。易证明，可以以对数">
   
     <link rel="alternate" href="/atom.xml" title="keep hungry, keep foolish" type="application/atom+xml">
   
@@ -82,10 +82,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-SQL-related" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-about-binary-tree" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/06/SQL-related/" class="article-date">
-  <time datetime="2018-08-06T11:36:32.000Z" itemprop="datePublished">2018-08-06</time>
+    <a href="/2018/08/15/about-binary-tree/" class="article-date">
+  <time datetime="2018-08-15T11:58:08.000Z" itemprop="datePublished">2018-08-15</time>
 </a>
     
   </div>
@@ -96,7 +96,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      SQL-related
+      about-binary-tree
     </h1>
   
 
@@ -104,25 +104,28 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数据库的知识太多，分优先级的话应当学会操作首先。因此对传统关系型数据库的操作略作整理。</p>
-<h1 id="SQL组成"><a href="#SQL组成" class="headerlink" title="SQL组成"></a>SQL组成</h1><p>SQL标准包括两个主要部分：</p>
-<ol>
-<li>数据定义语言（Data Definition Language, DDL）用于定义数据库结构和数据的访问控制。</li>
-<li>数据操作语言（Data Manipulation Language, DML）用于检索和更新数据。</li>
+        <p>新买了本书《STL源码解析》，没怎么看懂源码反而把二叉树的性质原理之类加深了一些理解。</p>
+<h2 id="二叉树定义及性质"><a href="#二叉树定义及性质" class="headerlink" title="二叉树定义及性质"></a>二叉树定义及性质</h2><blockquote>
+<p>二叉搜索树，可以提供对数时间的元素插入和访问。节点放置规则是：任何节点的键值一定大于其左子树中的每一个节点的键值，并且小于其右侧子树中的每一个节点的键值。（ps：出现重复的值怎么处理？）</p>
+</blockquote>
+<p>根据节点的放置规则可知：从根节点沿着左侧走即可查找到最小值，右侧寻找可以查找到最大值。<br>易证明，可以以对数时间访问元素。（插入在后面需要证明几个操作）</p>
+<h2 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h2><p>现在需要向一个二叉树中插入一个值，那么沿着根节点出发，将需要插入的值与当前的键值进行比较。如果需要插入的值较大，那么向右走；反之向左走。直至走至叶节点，即没有子树时，顺势插入左侧或者右侧。</p>
+<p>根据上述描述，可知最终得到的新的二叉树符合二叉树的性质。</p>
+<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><ol>
+<li>首先考虑最简单的删除叶节点的情形，即直接删除即可。<br>易知新的二叉树符合二叉树性质。</li>
+<li>删除的节点是局部二叉树的根节点。此时若删除该节点，需要将剩余的所有点重新连接至原本的二叉树上。保持剩下的节点相对位置不变，那么只需要在原有的根节点处插入一个新值即可。该新值满足大于左侧子树的任意值，小于右侧子树的任意值。考虑到维持节点的内容，与子树的性质。取右侧子树的最小值，执行删除操作（必然是叶节点，直接删除），取出内容，放置于根节点。<br>可知新的二叉树依然符合二叉树性质。<br>3.若删除的节点只有一个子节点，那么直接将该节点删除，将该叶节点连接至上一层父节点。（和2中的情形相似，语言描述不是很方便）</li>
 </ol>
-<h2 id="SQL-DML-语句"><a href="#SQL-DML-语句" class="headerlink" title="SQL DML 语句"></a>SQL DML 语句</h2><p>有以下几种：</p>
-<p>$$<br>\begin{aligned}<br>&amp; SELECT： 查询数据库中的数据\\<br>&amp; INSERT： 将数据插入到表中\\<br>&amp; UPDATE： 更新表中的数据\\<br>&amp; DELETE： 删除表中的数据\\<br>\end{aligned}<br>$$</p>
-<p>其中SELECT较为复杂，需要额外增加一些操作说明，如排序、分组、聚集、涉及多个表的复杂查询。</p>
-<h2 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h2><p>$$<br>\begin{aligned}<br>&amp; SELECT \;\;\;\; &amp;[DISTINCT\; |\; ALL]{\ast\; |\; [columnExpression [AS newName]] [,…]}\\<br>&amp; FROM &amp; TableName[alias][,…]\\<br>&amp; [WHERE &amp; condition] \\<br>&amp; [GROUP\; BY &amp; columnList][HAVING\; condition]\\<br>&amp; [ORDERED\; BY &amp; columnList] \\<br>\end{aligned}<br>$$</p>
-<p>其中：<br>FROM：给出将用到的列表<br>WHERE：过滤满足条件的行<br>GROUP BY： 将具有相同属性值的行分成组<br>HAVING： 过滤满足条件的组<br>SELECT： 指定查询结果中出现的列<br>ORDER BY:指定查询结果的顺序<br>形式不应当比内容重要，不在格式上花过多的时间了。</p>
+<p>综上二叉树一般情形，性质，操作，作用均已经描述。</p>
+<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><p>在最极端情况下，二叉树极不平衡，其搜索效率为 $O(n)$ ，因此引入了平衡二叉树的概念。需要考虑的为什么通过这些平衡二叉树的额外性质可以对树进行平衡操作，同时依旧符合其自身的性质。（可以用范畴的语言更精确描述）</p>
+<p>todo: 描述他们的行为与性质</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/06/SQL-related/" data-id="cjkv8f3vs0000pgd88ihpx407" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/15/about-binary-tree/" data-id="cjkv8f3vy0001pgd8f44plbcv" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data-structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
 
     </footer>
   </div>
@@ -130,19 +133,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2018/08/13/arrangements-about-some-books/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          arrangements-about-some-books
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/31/a-tip-for-latex-in-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/08/13/arrangements-about-some-books/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">a-tip-for-latex-in-hexo</div>
+      <div class="article-nav-title">arrangements-about-some-books</div>
     </a>
   
 </nav>
