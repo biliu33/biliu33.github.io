@@ -18,19 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>Tag: SQL | keep hungry, keep foolish</title>
+  <title>handwriting-about-a-question-in-leetcode | keep hungry, keep foolish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="some notes">
-<meta name="keywords" content="mathematics, programming, python, machine learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="keep hungry, keep foolish">
-<meta property="og:url" content="http://yoursite.com/tags/SQL/index.html">
+  <meta name="description" content="今晚回来之后写了一道LeetCode的题目，总计花了30分钟左右，时间有点长。实际花的时间应当更长一点，因为之前看到这个的时候曾经做过一些思考。 大致思路从最简单的情形考虑，计算出所有的两个数的倍数，然后混合排序，得到一个list。最后从中取出第n个数，即可完成目的。 显然这个思路是正确的，但是同时将会花费大量的时间。 考虑到他们的数据出现结构，大致思考后可以发现，他们是周期性重复的。个数间隔等。">
+<meta name="keywords" content="handwriting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="handwriting-about-a-question-in-leetcode">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/handwriting-about-a-question-in-leetcode/index.html">
 <meta property="og:site_name" content="keep hungry, keep foolish">
-<meta property="og:description" content="some notes">
+<meta property="og:description" content="今晚回来之后写了一道LeetCode的题目，总计花了30分钟左右，时间有点长。实际花的时间应当更长一点，因为之前看到这个的时候曾经做过一些思考。 大致思路从最简单的情形考虑，计算出所有的两个数的倍数，然后混合排序，得到一个list。最后从中取出第n个数，即可完成目的。 显然这个思路是正确的，但是同时将会花费大量的时间。 考虑到他们的数据出现结构，大致思考后可以发现，他们是周期性重复的。个数间隔等。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-22T15:25:17.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="keep hungry, keep foolish">
-<meta name="twitter:description" content="some notes">
+<meta name="twitter:title" content="handwriting-about-a-question-in-leetcode">
+<meta name="twitter:description" content="今晚回来之后写了一道LeetCode的题目，总计花了30分钟左右，时间有点长。实际花的时间应当更长一点，因为之前看到这个的时候曾经做过一些思考。 大致思路从最简单的情形考虑，计算出所有的两个数的倍数，然后混合排序，得到一个list。最后从中取出第n个数，即可完成目的。 显然这个思路是正确的，但是同时将会花费大量的时间。 考虑到他们的数据出现结构，大致思考后可以发现，他们是周期性重复的。个数间隔等。">
   
     <link rel="alternate" href="/atom.xml" title="keep hungry, keep foolish" type="application/atom+xml">
   
@@ -81,40 +82,66 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/06/SQL-related/" class="archive-article-date">
-  <time datetime="2018-08-06T11:36:32.000Z" itemprop="datePublished">Aug 6</time>
+        <section id="main"><article id="post-handwriting-about-a-question-in-leetcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/22/handwriting-about-a-question-in-leetcode/" class="article-date">
+  <time datetime="2018-11-22T15:13:25.000Z" itemprop="datePublished">2018-11-22</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/SQL-related/">SQL-related</a>
+    <h1 class="article-title" itemprop="name">
+      handwriting-about-a-question-in-leetcode
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今晚回来之后写了一道LeetCode的题目，总计花了30分钟左右，时间有点长。<br>实际花的时间应当更长一点，因为之前看到这个的时候曾经做过一些思考。</p>
+<h2 id="大致思路"><a href="#大致思路" class="headerlink" title="大致思路"></a>大致思路</h2><p>从最简单的情形考虑，计算出所有的两个数的倍数，然后混合排序，得到一个list。<br>最后从中取出第n个数，即可完成目的。</p>
+<p>显然这个思路是正确的，但是同时将会花费大量的时间。</p>
+<p>考虑到他们的数据出现结构，大致思考后可以发现，他们是周期性重复的。个数间隔等。<br>因此，大致思路就是计算他们每一个周期的个数，计算一个周期内的第N个数字，最后回到周期。<br>汇总，最终得到结果。</p>
+<p>虽然完成了，但是计算的性能似乎不是很好。</p>
+<p>没有查阅他人的资料，也没有去查看他人的算法。明天抽空看一下把。</p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>一般一个问题的解法如何有效率的、机械的找到解法？<br>首先应当是尝试将未知的问题转化为熟悉的问题，对问题进行观察思考，<br>然后将问题进行细化分解，最终下笔得出解法。</p>
+<p>混乱的思考方式中，会发生大量的重复的思考，从而导致效率的低下。</p>
+<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><p>写完题目后，想尝试下对性能进行优化。只有很小很小的提升（毫无意义）。<br>大概15分钟写完这个blog。<br>接下来几天的计划：</p>
+<ol>
+<li>看书， 对书中的公式进行推导（machine learning a Probabilistic Perspective）</li>
+<li>继续背诵英语单词， 锻炼英语听力</li>
+</ol>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/22/handwriting-about-a-question-in-leetcode/" data-id="cjosr0w6z00082od8v3vlbbe7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handwriting/">handwriting</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/07/benchmark-about-my-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">benchmark about my blog</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
