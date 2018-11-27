@@ -18,20 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>install-mathjax-and-set-google-analysis-config | keep hungry, keep foolish</title>
+  <title>merge-k-sorted-list:a-little-consideration | keep hungry, keep foolish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="add mathematical equations原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。因此设法可以使用latex形式的数学公式便十分重要了。 安装hexo-renderer-mathjax npm install hexo-renderer-mathjax –save  由于一些奇怪的原因，这个module无法直接使用，需要做一些修">
-<meta name="keywords" content="tips,write blog">
+  <meta name="description" content="今天完成一道LeetCode上的题目，总共的时间大约是10分钟左右把。与之前碰到的问题有很大的不同，也很有趣，因此予以记录。 场景复原看到这个题目的第一反应是可能需要构建比较巧妙的数据结构，同时利用好的算法解决。思考了很久，并没有什么好的思路（当时有想到部分极端情形下的复杂度）。因为时间问题，当时已经22.30了，而计划是23.30去背英语，所以看了下discussion。恍然大悟，问题得解。 思">
+<meta name="keywords" content="handwriting,leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="install-mathjax-and-set-google-analysis-config">
-<meta property="og:url" content="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/index.html">
+<meta property="og:title" content="merge-k-sorted-list:a-little-consideration">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/merge-k-sorted-list-a-little-consideration/index.html">
 <meta property="og:site_name" content="keep hungry, keep foolish">
-<meta property="og:description" content="add mathematical equations原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。因此设法可以使用latex形式的数学公式便十分重要了。 安装hexo-renderer-mathjax npm install hexo-renderer-mathjax –save  由于一些奇怪的原因，这个module无法直接使用，需要做一些修">
+<meta property="og:description" content="今天完成一道LeetCode上的题目，总共的时间大约是10分钟左右把。与之前碰到的问题有很大的不同，也很有趣，因此予以记录。 场景复原看到这个题目的第一反应是可能需要构建比较巧妙的数据结构，同时利用好的算法解决。思考了很久，并没有什么好的思路（当时有想到部分极端情形下的复杂度）。因为时间问题，当时已经22.30了，而计划是23.30去背英语，所以看了下discussion。恍然大悟，问题得解。 思">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-31T13:52:26.800Z">
+<meta property="og:updated_time" content="2018-11-27T15:01:13.890Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="install-mathjax-and-set-google-analysis-config">
-<meta name="twitter:description" content="add mathematical equations原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。因此设法可以使用latex形式的数学公式便十分重要了。 安装hexo-renderer-mathjax npm install hexo-renderer-mathjax –save  由于一些奇怪的原因，这个module无法直接使用，需要做一些修">
+<meta name="twitter:title" content="merge-k-sorted-list:a-little-consideration">
+<meta name="twitter:description" content="今天完成一道LeetCode上的题目，总共的时间大约是10分钟左右把。与之前碰到的问题有很大的不同，也很有趣，因此予以记录。 场景复原看到这个题目的第一反应是可能需要构建比较巧妙的数据结构，同时利用好的算法解决。思考了很久，并没有什么好的思路（当时有想到部分极端情形下的复杂度）。因为时间问题，当时已经22.30了，而计划是23.30去背英语，所以看了下discussion。恍然大悟，问题得解。 思">
   
     <link rel="alternate" href="/atom.xml" title="keep hungry, keep foolish" type="application/atom+xml">
   
@@ -82,10 +82,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-install-mathjax-and-set-google-analysis-config" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-merge-k-sorted-list-a-little-consideration" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/24/install-mathjax-and-set-google-analysis-config/" class="article-date">
-  <time datetime="2018-07-24T13:40:32.000Z" itemprop="datePublished">2018-07-24</time>
+    <a href="/2018/11/27/merge-k-sorted-list-a-little-consideration/" class="article-date">
+  <time datetime="2018-11-27T14:47:39.000Z" itemprop="datePublished">2018-11-27</time>
 </a>
     
   </div>
@@ -96,7 +96,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      install-mathjax-and-set-google-analysis-config
+      merge-k-sorted-list:a-little-consideration
     </h1>
   
 
@@ -104,41 +104,20 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="add-mathematical-equations"><a href="#add-mathematical-equations" class="headerlink" title="add mathematical equations"></a>add mathematical equations</h1><p>原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。<br>因此设法可以使用latex形式的数学公式便十分重要了。</p>
-<h2 id="安装hexo-renderer-mathjax"><a href="#安装hexo-renderer-mathjax" class="headerlink" title="安装hexo-renderer-mathjax"></a>安装hexo-renderer-mathjax</h2><blockquote>
-<p>npm install hexo-renderer-mathjax –save</p>
-</blockquote>
-<p>由于一些奇怪的原因，这个module无法直接使用，需要做一些修改</p>
-<h3 id="node-modules-hexo-renderer-mathjax-mathjax-html"><a href="#node-modules-hexo-renderer-mathjax-mathjax-html" class="headerlink" title="./node_modules/hexo-renderer-mathjax/mathjax.html"></a>./node_modules/hexo-renderer-mathjax/mathjax.html</h3><p>将script中对应的src修改为：</p>
-<blockquote>
-<p>“<a href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;" target="_blank" rel="noopener">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;</a></p>
-</blockquote>
-<h3 id="nodes-modules-marked-lib-marked-js"><a href="#nodes-modules-marked-lib-marked-js" class="headerlink" title="./nodes_modules/marked/lib/marked.js"></a>./nodes_modules/marked/lib/marked.js</h3><p>1.</p>
-<blockquote>
-<p>before: “escape: /^\(<a href="">\`*{}[\</a>#$+-.!_&gt;])/,”<br>after: “escape: /^\(<a href="">`*[\</a># +-.!_&gt;])/,”</p>
-</blockquote>
-<p>2.</p>
-<blockquote>
-<p>before: “em: /^\b_((?:__|[\s\S])+?)_\b|^*((?:**|[\s\S])+?)*(?!*)/,”<br>after: “em: /^*((?:**|[\s\S])+?)*(?!*)/,”</p>
-</blockquote>
-<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>即使安装并修改了上述模块，依然无法在markdown文件中直接使用latex方式书写公式，需要在开始的配置处添加配置项：</p>
-<blockquote>
-<p>mathjax: true</p>
-</blockquote>
-<h1 id="add-google-analytics"><a href="#add-google-analytics" class="headerlink" title="add google analytics"></a>add google analytics</h1><p>就我使用的hexo版本而言，许多国内的博客教程是错误的。因此略微记录一下。</p>
-<h2 id="修改的-config-yaml"><a href="#修改的-config-yaml" class="headerlink" title="修改的_config.yaml"></a>修改的_config.yaml</h2><p>添加这个插件确实需要修改配置文件，但是这个配置文件是对应额theme的配置文件，而不是我们一般的博客的配置。</p>
-<h2 id="修改-config-yaml方式"><a href="#修改-config-yaml方式" class="headerlink" title="修改_config.yaml方式"></a>修改_config.yaml方式</h2><p>这里许多国内的博客介绍的是将google analytics 当做父级，然后添加id， site， enable 等等。<br>但是似乎并没有生效，去google上检索， 将u-id直接放置于google analytics后面即可。</p>
-<blockquote>
-<p>google_analytics: u-id </p>
-</blockquote>
+        <p>今天完成一道LeetCode上的题目，总共的时间大约是10分钟左右把。<br>与之前碰到的问题有很大的不同，也很有趣，因此予以记录。</p>
+<h2 id="场景复原"><a href="#场景复原" class="headerlink" title="场景复原"></a>场景复原</h2><p>看到这个题目的第一反应是可能需要构建比较巧妙的数据结构，同时利用好的算法解决。<br>思考了很久，并没有什么好的思路（当时有想到部分极端情形下的复杂度）。<br>因为时间问题，当时已经22.30了，而计划是23.30去背英语，所以看了下discussion。<br>恍然大悟，问题得解。</p>
+<h2 id="思路与解决方案"><a href="#思路与解决方案" class="headerlink" title="思路与解决方案"></a>思路与解决方案</h2><p>实际上，考虑他们的极端情形下的问题本质，当有k个长度为1的listNode时。<br>那么这里的问题实质已经变化为了对k个随机数字进行排序的问题了。<br>与题目中的sortedList一点关系都没有了。</p>
+<p>所以最后实际上，问题的策略在于，将这k个list中的数字取出，做一个最终的排序。<br>因为语言中这种自带的排序都经过了相当的优化，因此无需担心性能问题。<br>最后，将得到的list还原为题目需要的数据结构。得解</p>
+<p>其中可能有优化空间的地方是在k比较小，同时其中的list比较长的时候是否可以优化？<br>是否有一种算法可以同时对这两种极端情形都有一个较好的算法结果？</p>
+<h2 id="思考与结论"><a href="#思考与结论" class="headerlink" title="思考与结论"></a>思考与结论</h2><p>与寻找问题的解决方案相比，更重要的是认清问题的本质，遵循规范的思路方案。<br>分析问题，考虑问题的各种情形（常见的边界考虑），思考解决方案，对问题回溯验证。<br>最终得解。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjozvd6hq00088cd88vc21725" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/merge-k-sorted-list-a-little-consideration/" data-id="cjozvd6hs00098cd8afp0sji6" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handwriting/">handwriting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
 
     </footer>
   </div>
@@ -146,19 +125,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          the-smallest-natural-number-which-not-exists-in-list
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/23/monad-related/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/11/22/handwriting-about-a-question-in-leetcode/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">monad-related</div>
+      <div class="article-nav-title">handwriting-about-a-question-in-leetcode</div>
     </a>
   
 </nav>

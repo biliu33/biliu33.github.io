@@ -83,6 +83,50 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-merge-k-sorted-list-a-little-consideration" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/27/merge-k-sorted-list-a-little-consideration/" class="article-date">
+  <time datetime="2018-11-27T14:47:39.000Z" itemprop="datePublished">2018-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/27/merge-k-sorted-list-a-little-consideration/">merge-k-sorted-list:a-little-consideration</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天完成一道LeetCode上的题目，总共的时间大约是10分钟左右把。<br>与之前碰到的问题有很大的不同，也很有趣，因此予以记录。</p>
+<h2 id="场景复原"><a href="#场景复原" class="headerlink" title="场景复原"></a>场景复原</h2><p>看到这个题目的第一反应是可能需要构建比较巧妙的数据结构，同时利用好的算法解决。<br>思考了很久，并没有什么好的思路（当时有想到部分极端情形下的复杂度）。<br>因为时间问题，当时已经22.30了，而计划是23.30去背英语，所以看了下discussion。<br>恍然大悟，问题得解。</p>
+<h2 id="思路与解决方案"><a href="#思路与解决方案" class="headerlink" title="思路与解决方案"></a>思路与解决方案</h2><p>实际上，考虑他们的极端情形下的问题本质，当有k个长度为1的listNode时。<br>那么这里的问题实质已经变化为了对k个随机数字进行排序的问题了。<br>与题目中的sortedList一点关系都没有了。</p>
+<p>所以最后实际上，问题的策略在于，将这k个list中的数字取出，做一个最终的排序。<br>因为语言中这种自带的排序都经过了相当的优化，因此无需担心性能问题。<br>最后，将得到的list还原为题目需要的数据结构。得解</p>
+<p>其中可能有优化空间的地方是在k比较小，同时其中的list比较长的时候是否可以优化？<br>是否有一种算法可以同时对这两种极端情形都有一个较好的算法结果？</p>
+<h2 id="思考与结论"><a href="#思考与结论" class="headerlink" title="思考与结论"></a>思考与结论</h2><p>与寻找问题的解决方案相比，更重要的是认清问题的本质，遵循规范的思路方案。<br>分析问题，考虑问题的各种情形（常见的边界考虑），思考解决方案，对问题回溯验证。<br>最终得解。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/27/merge-k-sorted-list-a-little-consideration/" data-id="cjozvd6hs00098cd8afp0sji6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handwriting/">handwriting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-handwriting-about-a-question-in-leetcode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/22/handwriting-about-a-question-in-leetcode/" class="article-date">
@@ -122,10 +166,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/22/handwriting-about-a-question-in-leetcode/" data-id="cjosr0w6z00082od8v3vlbbe7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/22/handwriting-about-a-question-in-leetcode/" data-id="cjozvd6hp00058cd86krqdkqc" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handwriting/">handwriting</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/handwriting/">handwriting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
 
     </footer>
   </div>
@@ -165,7 +209,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/07/benchmark-about-my-blog/" data-id="cjosr0w6x00052od89o3wfcvw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/07/benchmark-about-my-blog/" data-id="cjozvd6ho00048cd8e8bf3ama" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li></ul>
@@ -217,7 +261,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/15/about-binary-tree/" data-id="cjosr0w6v00032od8wae15l75" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/15/about-binary-tree/" data-id="cjozvd6i2000k8cd8pijayxgd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data-structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
@@ -280,7 +324,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/13/arrangements-about-some-books/" data-id="cjosr0w6w00042od8ejpiz1n1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/13/arrangements-about-some-books/" data-id="cjozvd6hm00038cd855l7261t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arrangements/">arrangements</a></li></ul>
@@ -329,7 +373,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/06/SQL-related/" data-id="cjosr0w6500002od8koiyans7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/06/SQL-related/" data-id="cjozvd6hd00008cd83pqjykp0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -371,7 +415,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/" data-id="cjosr0w6r00012od8lzojq3bt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/31/a-tip-for-latex-in-hexo/" data-id="cjozvd6hi00018cd8bzgrp7hk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li></ul>
@@ -431,7 +475,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/31/make-the-list-to-100/" data-id="cjosr0w72000b2od82fje6guj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/31/make-the-list-to-100/" data-id="cjozvd6hv000d8cd8y8yggtyv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
@@ -495,7 +539,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" data-id="cjosr0w7r00132od8yo5b4bh5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" data-id="cjozvd6i1000i8cd8uumwoqsq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/readings/">readings</a></li></ul>
@@ -560,130 +604,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjosr0w7100092od8smnh83vp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjozvd6hq00088cd88vc21725" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-monad-related" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/23/monad-related/" class="article-date">
-  <time datetime="2018-07-23T10:51:06.000Z" itemprop="datePublished">2018-07-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/23/monad-related/">monad-related</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="monad"><a href="#monad" class="headerlink" title="monad"></a>monad</h1><h2 id="概念定义"><a href="#概念定义" class="headerlink" title="概念定义"></a>概念定义</h2><blockquote>
-<p>a monad is just a monoid in the category of endofunctors.(单子说白了不过就是自函子范畴上的一个幺半群而已)</p>
-</blockquote>
-<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="Binary-operation-二元操作"><a href="#Binary-operation-二元操作" class="headerlink" title="Binary operation(二元操作)"></a>Binary operation(二元操作)</h3><p>as its name.</p>
-<h3 id="Magma-wiki"><a href="#Magma-wiki" class="headerlink" title="Magma(wiki)"></a>Magma(wiki)</h3><p> in abstract algebra, a magma(or groupoid: not to be confused with groupoids in category theory) is a basic kind of algebraic structure.<br>Specifically, a magma consists of a set equipped with a single binary operation.<br>The binary operation must be closed by definition but no other properties are imposed.<br>支持二元操作符, 同时该操作满足闭包性质. </p>
-<h2 id="Associative-结合律-wiki"><a href="#Associative-结合律-wiki" class="headerlink" title="Associative(结合律)(wiki)"></a>Associative(结合律)(wiki)</h2><p>formally, a binary operation * on a Set S is called associative if it staisfies the associative law:</p>
-<blockquote>
-<p>(x <em> y) </em> z = x <em> (y </em> z) for all x, y, z in S</p>
-</blockquote>
-<p>here, * is used to replace the symbol of the operation, which may be any sumbol, and even the absence of symbol(juxtaposition) as for multiplication.</p>
-<blockquote>
-<p>(xy)z = x(yz) = xyz for all x, y, z in S</p>
-</blockquote>
-<p>the associative law can alse be expressed in functional notation thus: f(f(x, y), z) = f(x, f(y, z))</p>
-<h3 id="Semigroup"><a href="#Semigroup" class="headerlink" title="Semigroup"></a>Semigroup</h3><p>a semigroup is a set on which the following is defined:</p>
-<blockquote>
-<p>operation: x ◦ y</p>
-</blockquote>
-<p>and on which the following axiom holds:</p>
-<blockquote>
-<p>x ◦ ( y ◦ z ) = ( x ◦ y ) ◦ z associativity</p>
-</blockquote>
-<h3 id="Identity-个人理解"><a href="#Identity-个人理解" class="headerlink" title="Identity(个人理解)"></a>Identity(个人理解)</h3><p>这个性质指的是,在一集合中,该集合中存在着一单位元素e, 任一元素与该元素执行二元操作得到的结果均为自身.<br>(关于相等, 二元操作, 顺序就不一一介绍了)</p>
-<h3 id="Monoid-wiki"><a href="#Monoid-wiki" class="headerlink" title="Monoid(wiki)"></a>Monoid(wiki)</h3><p>a monoid is a set on which the following are defined:</p>
-<blockquote>
-<p>operation: x ◦ y<br>constant:  e</p>
-</blockquote>
-<p>and on which the following axioms hold:(associativity, identity)</p>
-<blockquote>
-<p>x ◦ ( y ◦ z ) = ( x ◦ y ) ◦ z<br>x ◦ e = e ◦ x = x </p>
-</blockquote>
-<h3 id="Inverse"><a href="#Inverse" class="headerlink" title="Inverse"></a>Inverse</h3><p>the operation x^(-1) is the inverse operation: applying the operation to an item and its inverse results in the identity element, as the last axiom shows.</p>
-<h3 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h3><p>a group is a set on which the following are defined:</p>
-<blockquote>
-<p>operations: x ◦ y, x^(-1)<br>constant: e</p>
-</blockquote>
-<p>and on which the following axioms hold:(associativity, identity, cancellation)</p>
-<blockquote>
-<p>x ◦ ( y ◦ z ) = ( x ◦ y ) ◦ z<br>x ◦ e = e ◦ x = x<br>x ◦ x^(−1) = x^(−1) ◦ x = e</p>
-</blockquote>
-<h3 id="Commutative-交换律-wiki"><a href="#Commutative-交换律-wiki" class="headerlink" title="Commutative(交换律)(wiki)"></a>Commutative(交换律)(wiki)</h3><p>the term “commutative” is used in serveral related senses.</p>
-<ol>
-<li>a binary operation * on a set S is called commutative if:</li>
-</ol>
-<blockquote>
-<p>x <em> y = y </em> x for all x, y in S</p>
-</blockquote>
-<p>an operation that does not satisfy the above property is call non-commutative</p>
-<ol start="2">
-<li>One says that commutes with y under * if:</li>
-</ol>
-<blockquote>
-<p>x <em> y = y </em> x</p>
-</blockquote>
-<ol start="3">
-<li>A binary function: f: A * A -&gt; B is called commutative if:</li>
-</ol>
-<blockquote>
-<p>f(x, y) = f(y, x) for all x, y in A</p>
-</blockquote>
-<p>(这也意味着交换律与闭包无关)</p>
-<h3 id="category-范畴-wiki"><a href="#category-范畴-wiki" class="headerlink" title="category(范畴)(wiki)"></a>category(范畴)(wiki)</h3><p>there are many equivalent definitions of a category. One commonly used definition is as follows. a category C consists of:</p>
-<blockquote>
-<p>a class ib(C) of objects<br>a class hom(C) of morphisms, or arriwsm, or maps, between the objects. each morphism f has a source object a and a target object b where a and b are in ob(C). we write f: a -&gt; b, and we say “f is a morphism from a to b”.</p>
-</blockquote>
-<p>we write hom(a, b)(or hom_c(a, b) when there may be confusion about to which category hom(a, b) refers) to denote the hom-class of all morphisms from a to b.(some authors write Mor(a, b) or simply C(a, b) instead.)<br>such that the following axioms hold:</p>
-<blockquote>
-<p>(associativity) if f: a -&gt; b, g: b -&gt; c and h: c -&gt; d then h ◦ (g ◦ f) = (h ◦ g) ◦ f, and<br>(identity) for every object x, there exists a morphism 1_x: x -&gt; x </p>
-</blockquote>
-<p>(some authors write id_x) called the identity morphism for x, such that for every morphism f: a -&gt; x and every morphism g: x -&gt; b, we have 1_x ◦ f = f and g ◦ 1_x = g<br>from these axioms, one can prove that if there is exactly one identity morphism for every object. some authors use a slight varation of the definition in which each object is identified with the corresponding identity morphism.</p>
-<h3 id="morphisam-态射-wiki"><a href="#morphisam-态射-wiki" class="headerlink" title="morphisam(态射)(wiki)"></a>morphisam(态射)(wiki)</h3><p>a category C consists of two classes, one of objects and the other of morphisms.<br>there are two objects that are associated to every morphism, the source and the target.<br>for many common categories, objects are sets(often with some additional structure) and morphisms are functions from an object to another object. therefore, the source and the target of a morphism are called domain and codomain respectively.<br>morphisms are equipped with a partial binary operation, call composition. the composition of two morphisms f and g is defined if and only if the target of f is the source if g, and is denoted g ◦ f(or, sometimes, simly g f).<br>the source of g ◦ f is the source of f, and the target of g ◦ f is the target of g. the composition statisfies two axioms:<br>identity: for every object X, there exists a morphism id_x: X -&gt; X called the identity morphism on X, such that for every morphism f: A -&gt; B we have id_B ◦ f = f = f ◦ id_A.<br>associativity: h ∘ (g ∘ f) = (h ∘ g) ∘ f whenever the operations are defined, that is when the target of f is the source of g, and the target of g is the source of h.</p>
-<h3 id="functor-函子-wiki"><a href="#functor-函子-wiki" class="headerlink" title="functor(函子)(wiki)"></a>functor(函子)(wiki)</h3><p>let C and D be categories. a functor F form C to D is a mapping that:</p>
-<ol>
-<li>associates to each object X in C an object F(X) in D,</li>
-<li>associates to each morphism f: X -&gt; T in C a morphism F(f): F(X) -&gt; F(Y) in D such that the following two conditions hold</li>
-<li>F(id_x) = id(F(x)) for every object X in C,</li>
-<li>F(g ◦ f) = F(g) ◦ F(f) for all morphisms f: X -&gt; y and g: Y -&gt; Z in C.</li>
-</ol>
-<p>That is, functors must preserve identity morphisms and compostition of morphisms.</p>
-<h3 id="endofunctor-wiki"><a href="#endofunctor-wiki" class="headerlink" title="endofunctor(wiki)"></a>endofunctor(wiki)</h3><p>a functor that maps a category to itself.</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>如果所有的前置知识都可以正确理解的话,那么正如概念描述中所述:a monad is just a monoid in the category of endofunctors.</p>
-<h1 id="references"><a href="#references" class="headerlink" title="references:"></a>references:</h1><p>from mathematics to generic programming<br>wiki</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/23/monad-related/" data-id="cjosr0w74000d2od8ghsylh08" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/monad/">monad</a></li></ul>
 
     </footer>
   </div>
@@ -717,7 +641,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arrangements/">arrangements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data-structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/handwriting/">handwriting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/readings/">readings</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arrangements/">arrangements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bolock-chains/">bolock-chains</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data-structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/handwriting/">handwriting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monad/">monad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/readings/">readings</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
     </div>
   </div>
 
@@ -727,7 +651,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/arrangements/" style="font-size: 10px;">arrangements</a> <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/data-structure/" style="font-size: 10px;">data-structure</a> <a href="/tags/handwriting/" style="font-size: 10px;">handwriting</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/readings/" style="font-size: 15px;">readings</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/todo/" style="font-size: 15px;">todo</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
+      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/arrangements/" style="font-size: 10px;">arrangements</a> <a href="/tags/bolock-chains/" style="font-size: 10px;">bolock-chains</a> <a href="/tags/data-structure/" style="font-size: 10px;">data-structure</a> <a href="/tags/handwriting/" style="font-size: 15px;">handwriting</a> <a href="/tags/leetcode/" style="font-size: 15px;">leetcode</a> <a href="/tags/monad/" style="font-size: 10px;">monad</a> <a href="/tags/readings/" style="font-size: 15px;">readings</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/todo/" style="font-size: 15px;">todo</a> <a href="/tags/write-blog/" style="font-size: 10px;">write blog</a>
     </div>
   </div>
 
@@ -749,6 +673,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2018/11/27/merge-k-sorted-list-a-little-consideration/">merge-k-sorted-list:a-little-consideration</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/22/handwriting-about-a-question-in-leetcode/">handwriting-about-a-question-in-leetcode</a>
           </li>
         
@@ -762,10 +690,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/08/13/arrangements-about-some-books/">arrangements-about-some-books</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/06/SQL-related/">SQL-related</a>
           </li>
         
       </ul>
@@ -806,6 +730,22 @@ ga('send', 'pageview');
 
 
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 </body>
 </html>

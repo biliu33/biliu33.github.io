@@ -18,20 +18,19 @@ ga('send', 'pageview');
 
 
   
-  <title>install-mathjax-and-set-google-analysis-config | keep hungry, keep foolish</title>
+  <title>Tag: leetcode | keep hungry, keep foolish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="add mathematical equations原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。因此设法可以使用latex形式的数学公式便十分重要了。 安装hexo-renderer-mathjax npm install hexo-renderer-mathjax –save  由于一些奇怪的原因，这个module无法直接使用，需要做一些修">
-<meta name="keywords" content="tips,write blog">
-<meta property="og:type" content="article">
-<meta property="og:title" content="install-mathjax-and-set-google-analysis-config">
-<meta property="og:url" content="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/index.html">
+  <meta name="description" content="some notes">
+<meta name="keywords" content="mathematics, programming, python, machine learning">
+<meta property="og:type" content="website">
+<meta property="og:title" content="keep hungry, keep foolish">
+<meta property="og:url" content="http://yoursite.com/tags/leetcode/index.html">
 <meta property="og:site_name" content="keep hungry, keep foolish">
-<meta property="og:description" content="add mathematical equations原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。因此设法可以使用latex形式的数学公式便十分重要了。 安装hexo-renderer-mathjax npm install hexo-renderer-mathjax –save  由于一些奇怪的原因，这个module无法直接使用，需要做一些修">
+<meta property="og:description" content="some notes">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-31T13:52:26.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="install-mathjax-and-set-google-analysis-config">
-<meta name="twitter:description" content="add mathematical equations原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。因此设法可以使用latex形式的数学公式便十分重要了。 安装hexo-renderer-mathjax npm install hexo-renderer-mathjax –save  由于一些奇怪的原因，这个module无法直接使用，需要做一些修">
+<meta name="twitter:title" content="keep hungry, keep foolish">
+<meta name="twitter:description" content="some notes">
   
     <link rel="alternate" href="/atom.xml" title="keep hungry, keep foolish" type="application/atom+xml">
   
@@ -82,89 +81,59 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-install-mathjax-and-set-google-analysis-config" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/24/install-mathjax-and-set-google-analysis-config/" class="article-date">
-  <time datetime="2018-07-24T13:40:32.000Z" itemprop="datePublished">2018-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      install-mathjax-and-set-google-analysis-config
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/11/27/merge-k-sorted-list-a-little-consideration/" class="archive-article-date">
+  <time datetime="2018-11-27T14:47:39.000Z" itemprop="datePublished">Nov 27</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/11/27/merge-k-sorted-list-a-little-consideration/">merge-k-sorted-list:a-little-consideration</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="add-mathematical-equations"><a href="#add-mathematical-equations" class="headerlink" title="add mathematical equations"></a>add mathematical equations</h1><p>原本的hexo并不支持latex形式的数学公式的书写，但是通常学术一些的博客中都会使用到大量的公式。<br>因此设法可以使用latex形式的数学公式便十分重要了。</p>
-<h2 id="安装hexo-renderer-mathjax"><a href="#安装hexo-renderer-mathjax" class="headerlink" title="安装hexo-renderer-mathjax"></a>安装hexo-renderer-mathjax</h2><blockquote>
-<p>npm install hexo-renderer-mathjax –save</p>
-</blockquote>
-<p>由于一些奇怪的原因，这个module无法直接使用，需要做一些修改</p>
-<h3 id="node-modules-hexo-renderer-mathjax-mathjax-html"><a href="#node-modules-hexo-renderer-mathjax-mathjax-html" class="headerlink" title="./node_modules/hexo-renderer-mathjax/mathjax.html"></a>./node_modules/hexo-renderer-mathjax/mathjax.html</h3><p>将script中对应的src修改为：</p>
-<blockquote>
-<p>“<a href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;" target="_blank" rel="noopener">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;</a></p>
-</blockquote>
-<h3 id="nodes-modules-marked-lib-marked-js"><a href="#nodes-modules-marked-lib-marked-js" class="headerlink" title="./nodes_modules/marked/lib/marked.js"></a>./nodes_modules/marked/lib/marked.js</h3><p>1.</p>
-<blockquote>
-<p>before: “escape: /^\(<a href="">\`*{}[\</a>#$+-.!_&gt;])/,”<br>after: “escape: /^\(<a href="">`*[\</a># +-.!_&gt;])/,”</p>
-</blockquote>
-<p>2.</p>
-<blockquote>
-<p>before: “em: /^\b_((?:__|[\s\S])+?)_\b|^*((?:**|[\s\S])+?)*(?!*)/,”<br>after: “em: /^*((?:**|[\s\S])+?)*(?!*)/,”</p>
-</blockquote>
-<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>即使安装并修改了上述模块，依然无法在markdown文件中直接使用latex方式书写公式，需要在开始的配置处添加配置项：</p>
-<blockquote>
-<p>mathjax: true</p>
-</blockquote>
-<h1 id="add-google-analytics"><a href="#add-google-analytics" class="headerlink" title="add google analytics"></a>add google analytics</h1><p>就我使用的hexo版本而言，许多国内的博客教程是错误的。因此略微记录一下。</p>
-<h2 id="修改的-config-yaml"><a href="#修改的-config-yaml" class="headerlink" title="修改的_config.yaml"></a>修改的_config.yaml</h2><p>添加这个插件确实需要修改配置文件，但是这个配置文件是对应额theme的配置文件，而不是我们一般的博客的配置。</p>
-<h2 id="修改-config-yaml方式"><a href="#修改-config-yaml方式" class="headerlink" title="修改_config.yaml方式"></a>修改_config.yaml方式</h2><p>这里许多国内的博客介绍的是将google analytics 当做父级，然后添加id， site， enable 等等。<br>但是似乎并没有生效，去google上检索， 将u-id直接放置于google analytics后面即可。</p>
-<blockquote>
-<p>google_analytics: u-id </p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/24/install-mathjax-and-set-google-analysis-config/" data-id="cjozvd6hq00088cd88vc21725" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tips/">tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/write-blog/">write blog</a></li></ul>
-
-    </footer>
+    </header>
   </div>
+</article>
   
     
-<nav id="article-nav">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/11/22/handwriting-about-a-question-in-leetcode/" class="archive-article-date">
+  <time datetime="2018-11-22T15:13:25.000Z" itemprop="datePublished">Nov 22</time>
+</a>
+      
   
-    <a href="/2018/07/29/the-smallest-natural-number-which-not-exists-in-list/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          the-smallest-natural-number-which-not-exists-in-list
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/11/22/handwriting-about-a-question-in-leetcode/">handwriting-about-a-question-in-leetcode</a>
+    </h1>
   
-  
-    <a href="/2018/07/23/monad-related/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">monad-related</div>
-    </a>
-  
-</nav>
 
-  
+    </header>
+  </div>
 </article>
+  
+  
+    </div></section>
+  
+
 
 </section>
         
